@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <h1>Add a new restaurant</h1>
+    <P>Please feel the form!</P>
+  </div>
+  <div>
+    <%= simple_form_for @restaurant  do |restaurant|%>
+      <%= restaurant.input :name %>
+      <%= restaurant.input :address %>
+      <%= restaurant.input :phone_number %>
+      <%= restaurant.input :category, as: :select, collection: %w(chinese italian japanese french belgian) %>
+      <%= restaurant.button :submit %>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-end">
+    <%= link_to "back to list", restaurants_path %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div>
+    <h1>Add a new review to<%= @restaurant.name %></h1>
+    <P>Please feel the form!</P>
+  </div>
+  <div>
+    <%= simple_form_for [@restaurant, @review] do |review|%>
+      <%= review.input :rating %>
+      <%= review.input :content %>
+      <%= review.button :submit %>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-end">
+    <%= link_to "back to list", restaurants_path %>
+  </div>
+</div>
