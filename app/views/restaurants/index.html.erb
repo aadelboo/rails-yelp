@@ -1,5 +1,23 @@
-<% @restaurants.each do |restaurant| %>
-<ul>
-<li> <%= restaurant.name %></li>
-</ul>
-<% end %>
+
+<div class="banner d-flex justify-content-between mx-5 align-items-center">
+  <h1>Restaurants</h1>
+  <%= link_to "New Restaurant", new_restaurant_path %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg col-sm col-md col-xs">
+      <div class="d-flex">
+        <% @restaurants.each do |restaurant| %>
+          <div class="card m-2 shadow p-3 rounded-lg " style="width: 18rem;">
+            <div class="card-body p-1">
+              <h5 class="card-title"><%= restaurant.name %></h5>
+              <h6 class="card-subtitle mb-3 text-muted"><%= restaurant.category %>'s food</h6>
+              <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus doloremque voluptas recusandae ducimus quasi veritatis aliquam, cupiditate corrupti porro cumque fugit sed adipisci labore, rerum quas! Cum mollitia quis dignissimos?</p>
+              <p class="card-link p-3 mb-2 bg-light text-dark text-center"><%= link_to "Discover", restaurant_path(restaurant) %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
